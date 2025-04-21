@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vote-main-dev-eva
+  annotations:
+    codefresh.io/product: main-vote
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/salesdemocf/configs.git
+    targetRevision: HEAD
+    path: environments/development/main/vote
+  destination:
+    namespace: eva-main-dev
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true

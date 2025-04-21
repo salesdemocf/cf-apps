@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: result-env-abbr-eva
+  annotations:
+    codefresh.io/product: abbr-result
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/organization/configs.git
+    targetRevision: HEAD
+    path: environments/enviroment/abbr/result
+  destination:
+    namespace: eva-abbr-env
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
