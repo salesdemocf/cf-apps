@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vote-prod-arch-eva
+  annotations:
+    codefresh.io/product: vote
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/salesdemocf/configs.git
+    targetRevision: HEAD
+    path: environments/production-archive/vote
+  destination:
+    namespace: eva-production-archive
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true

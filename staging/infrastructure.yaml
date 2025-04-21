@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infrastructure-stg-eva
+  annotations:
+    codefresh.io/product: infrastructure
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/salesdemocf/configs.git
+    targetRevision: HEAD
+    path: environments/staging/infrastructure
+  destination:
+    namespace: eva-staging
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
