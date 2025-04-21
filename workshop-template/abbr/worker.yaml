@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: worker-env-abbr-eva
+  name: worker-env-s-abbr-eva
   annotations:
     codefresh.io/product: abbr-worker
 spec:
@@ -9,9 +9,9 @@ spec:
   source:
     repoURL: https://github.com/organization/configs.git
     targetRevision: HEAD
-    path: environments/environment/abbr/worker
+    path: environments/env-l/abbr/worker
   destination:
-    namespace: eva-abbr-env
+    namespace: eva-abbr-env-s
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

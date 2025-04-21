@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vote-env-abbr-eva
+  name: result-env-s-abbr-eva
   annotations:
-    codefresh.io/product: abbr-vote
+    codefresh.io/product: abbr-result
 spec:
   project: default
   source:
     repoURL: https://github.com/organization/configs.git
     targetRevision: HEAD
-    path: environments/environment/abbr/vote
+    path: environments/env-l/abbr/result
   destination:
-    namespace: eva-abbr-env
+    namespace: eva-abbr-env-s
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

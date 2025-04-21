@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infrastructure-env-abbr-eva
+  name: infrastructure-env-s-abbr-eva
   annotations:
     codefresh.io/product: abbr-infrastructure
 spec:
@@ -9,9 +9,9 @@ spec:
   source:
     repoURL: https://github.com/organization/cf-configs.git
     targetRevision: HEAD
-    path: environments/environment/abbr/infrastructure
+    path: environments/env-l/abbr/infrastructure
   destination:
-    namespace: eva-abbr-env
+    namespace: eva-abbr-env-s
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
