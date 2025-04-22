@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/organization/configs.git
+    repoURL: https://github.com/organization/cf-configs.git
     targetRevision: abbr
     path: environments/env-l/abbr/result
   destination:
