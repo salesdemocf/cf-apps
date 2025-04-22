@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/salesdemocf/cf-configs.git
     targetRevision: main
-    path: environments/production/main/infrastructure
+    path: environments/production/main/cf-infrastructure
   destination:
     namespace: eva-main-prod
     server: https://kubernetes.default.svc
