@@ -15,6 +15,8 @@ git clone ...
 git checkout -b $ABBR
 ```
 4. Run the following command once per environment/service you'd like to configure after setting the Environment Variables.
+> [! TIP]
+> Make sure you're in the root of cf-apps to run the rest of the commands.
 ``` console
 mkdir -p $ENVIRONMENT/$ABBR && cp workshop-templates/abbr/$SERVICE.yaml  $ENVIRONMENT/$ABBR/$SERVICE.yaml && cd $ENVIRONMENT/$ABBR && find . -type f -name "$SERVICE.yaml" -exec sed -i .bak -e "s|abbr|$ABBR|g ; s|env-l|$ENVIRONMENT|g ; s|env-s|$ENVIRONMENT_ABBR|g ; s|organization|$ORGANIZATION|g" {} +
 ```
