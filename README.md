@@ -16,15 +16,15 @@ git checkout -b $ABBR
 ```
 4. Run the following command once per environment/service you'd like to configure after setting the Environment Variables.
 ``` console
-cp -r workshop-templates/abbr/  $ENVIRONMENT/$ABBR/$SERVICE.yaml && cd $ENVIRONMENT/$ABBR && find . -type f -name "$SERVICE.yaml" -exec sed -i .bak -e "s|abbr|$ABBR|g ; s|env-l|$ENVIRONMENT|g ; s
-env-s|$ENVIRONMENT_ABBR|g ; s|organization|$ORGANIZATION|g" {} +
+mkdir -p $ENVIRONMENT/$ABBR && cp workshop-templates/abbr/$SERVICE.yaml  $ENVIRONMENT/$ABBR/$SERVICE.yaml && cd $ENVIRONMENT/$ABBR && find . -type f -name "$SERVICE.yaml" -exec sed -i .bak -e "s|abbr|$ABBR|g ; s|env-l|$ENVIRONMENT|g ; s|env-s|$ENVIRONMENT_ABBR|g ; s|organization|$ORGANIZATION|g" {} +
 ```
 5. Add files, commmit and push
 ``` console
 git add .
-git commit "Add files for $ABBR"
+git commit -m "Add files for $ABBR"
 git push --set-upstream origin $ABBR
 ```
+6. Open pull request and merge
 
 
 Environment Options
