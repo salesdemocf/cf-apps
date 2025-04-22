@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: infrastructure-dev-main-eva
   annotations:
-    codefresh.io/environment: development
+    environment: development
     codefresh.io/product: main-infrastructure
 spec:
   project: default
