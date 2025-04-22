@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: worker-main-dev-eva
+  name: worker-dev-main-eva
   annotations:
     codefresh.io/product: main-worker
 spec:

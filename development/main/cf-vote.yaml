@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vote-main-dev-eva
+  name: vote-dev-main-eva
   annotations:
     codefresh.io/product: main-vote
 spec:
