@@ -2,8 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: infrastructure-dev-main-eva
+  labels:
+    codefresh.io/environment: development
   annotations:
-    environment: development
     codefresh.io/product: main-infrastructure
 spec:
   project: default
