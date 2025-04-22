@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infrastructure-main-stg-eva
+  name: infrastructure-prod-eva
   annotations:
     codefresh.io/product: main-infrastructure
 spec:
@@ -9,9 +9,9 @@ spec:
   source:
     repoURL: https://github.com/salesdemocf/cf-configs.git
     targetRevision: HEAD
-    path: environments/staging/main/infrastructure
+    path: environments/production/main/cf-infrastructure
   destination:
-    namespace: eva-main-stg
+    namespace: eva-main-prod
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

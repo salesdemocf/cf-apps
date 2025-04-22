@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: result-env-s-abbr-eva
+  name: worker-main-stg-eva
   annotations:
-    codefresh.io/product: abbr-result
+    codefresh.io/product: main-worker
 spec:
   project: default
   source:
-    repoURL: https://github.com/organization/cf-configs.git
-    targetRevision: abbr
-    path: environments/env-l/abbr/result
+    repoURL: https://github.com/salesdemocf/cf-configs.git
+    targetRevision: HEAD
+    path: environments/staging/main/cf-worker
   destination:
-    namespace: eva-abbr-env-s
+    namespace: eva-main-stg
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:

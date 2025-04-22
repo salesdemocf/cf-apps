@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vote-env-s-abbr-eva
+  name: vote-main-dev-eva
   annotations:
-    codefresh.io/product: abbr-vote
+    codefresh.io/product: main-vote
 spec:
   project: default
   source:
-    repoURL: https://github.com/organization/cf-configs.git
-    targetRevision: abbr
-    path: environments/env-l/abbr/vote
+    repoURL: https://github.com/salesdemocf/cf-configs.git
+    targetRevision: HEAD
+    path: environments/development/main/cf-vote
   destination:
-    namespace: eva-abbr-env-s
+    namespace: eva-main-dev
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
