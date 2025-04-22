@@ -8,8 +8,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/salesdemocf/cf-configs.git
-    targetRevision: HEAD
-    path: environments/development/cf-result
+    targetRevision: main
+    path: environments/development/main/cf-result
   destination:
     namespace: eva-main-dev
     server: https://kubernetes.default.svc

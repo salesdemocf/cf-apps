@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/salesdemocf/cf-configs.git
-    targetRevision: HEAD
+    targetRevision: main
     path: environments/development/main/cf-worker
   destination:
     namespace: eva-main-dev
