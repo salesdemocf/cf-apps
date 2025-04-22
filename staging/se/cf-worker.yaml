@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: worker-stg-se-eva
   annotations:
+    codefresh.io/environment: staging
     codefresh.io/product: se-worker
 spec:
   project: default

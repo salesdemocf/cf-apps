@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: worker-prod-se-eva
   annotations:
+    codefresh.io/environment: production
     codefresh.io/product: se-worker
 spec:
   project: default

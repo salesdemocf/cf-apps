@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: vote-dev-main-eva
   annotations:
+    codefresh.io/environment: development
     codefresh.io/product: main-vote
 spec:
   project: default

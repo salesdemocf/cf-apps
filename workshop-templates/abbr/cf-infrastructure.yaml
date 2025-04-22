@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: infrastructure-env-s-abbr-eva
   annotations:
+    codefresh.io/environment: env-l
     codefresh.io/product: abbr-infrastructure
 spec:
   project: default

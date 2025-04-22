@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: result-stg-main-eva
   annotations:
+    codefresh.io/environment: staging
     codefresh.io/product: main-result
 spec:
   project: default

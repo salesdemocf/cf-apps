@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: result-prod-main-eva
   annotations:
+    codefresh.io/environment: production
     codefresh.io/product: main-result
 spec:
   project: default

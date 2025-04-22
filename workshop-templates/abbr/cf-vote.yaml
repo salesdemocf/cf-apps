@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: vote-env-s-abbr-eva
   annotations:
+    codefresh.io/environment: env-l
     codefresh.io/product: abbr-vote
 spec:
   project: default

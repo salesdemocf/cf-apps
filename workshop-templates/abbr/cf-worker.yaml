@@ -4,6 +4,7 @@ metadata:
   name: worker-env-s-abbr-eva
   annotations:
     codefresh.io/product: abbr-worker
+    codefresh.io/environment: env-l
 spec:
   project: default
   source:
