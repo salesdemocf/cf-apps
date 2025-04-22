@@ -24,7 +24,7 @@ git add .
 git commit -m "Add files for $ABBR"
 git push --set-upstream origin $ABBR
 ```
-6. Open pull request and merge
+6. Open pull request against main branch and merge
 
 
 Environment Options
