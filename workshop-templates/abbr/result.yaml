@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/organization/configs.git
-    targetRevision: HEAD
+    targetRevision: abbr
     path: environments/env-l/abbr/result
   destination:
     namespace: eva-abbr-env-s

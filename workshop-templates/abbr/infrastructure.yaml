@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/organization/cf-configs.git
-    targetRevision: HEAD
+    targetRevision: abbr
     path: environments/env-l/abbr/infrastructure
   destination:
     namespace: eva-abbr-env-s
