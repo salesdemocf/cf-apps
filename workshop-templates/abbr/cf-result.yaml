@@ -2,8 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: result-env-s-abbr-eva
-  annotations:
+  labels:
     codefresh.io/environment: env-l
+  annotations:
     codefresh.io/product: abbr-result
 spec:
   project: default

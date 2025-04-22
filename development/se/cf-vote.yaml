@@ -2,8 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: vote-dev-se-eva
-  annotations:
+  labels:
     codefresh.io/environment: development
+  annotations:
     codefresh.io/product: se-vote
 spec:
   project: default
