@@ -16,7 +16,7 @@ git checkout -b $ABBR
 ```
 4. Run the following command once per environment/service you'd like to configure after setting the Environment Variables.
 ``` console
-mkdir -p $ENVIRONMENT/$ABBR && cp workshop-templates/abbr/cf-$SERVICE.yaml  $ENVIRONMENT/$ABBR/cf-$SERVICE.yaml && cd $ENVIRONMENT/$ABBR && find . -type f -name "cf-$SERVICE.yaml" -exec sed -i .bak -e "s|abbr|$ABBR|g ; s|env-l|$ENVIRONMENT|g ; s|env-s|$ENVIRONMENT_ABBR|g ; s|organization|$ORGANIZATION|g" {} +
+mkdir -p $ENVIRONMENT/$ABBR && cp workshop-templates/abbr/$SERVICE.yaml  $ENVIRONMENT/$ABBR/$SERVICE.yaml && cd $ENVIRONMENT/$ABBR && find . -type f -name "$SERVICE.yaml" -exec sed -i .bak -e "s|abbr|$ABBR|g ; s|env-l|$ENVIRONMENT|g ; s|env-s|$ENVIRONMENT_ABBR|g ; s|organization|$ORGANIZATION|g" {} +
 ```
 5. Add files, commmit and push
 ``` console
@@ -38,8 +38,8 @@ production / prod
 Service Options
 ```
 SERVICE
-infrastructure
-result
-vote
-worker
+cf-infrastructure
+cf-result
+cf-vote
+cf-worker
 ```
