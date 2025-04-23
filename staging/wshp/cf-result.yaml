@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: result-stg-wshp-eva
+  labels:
+    codefresh.io/environment: staging
+  annotations:
+    codefresh.io/product: wshp-result
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/salesdemocf/cf-configs.git
+    targetRevision: wshp
+    path: environments/staging/wshp/cf-result
+  destination:
+    namespace: eva-wshp-stg
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
