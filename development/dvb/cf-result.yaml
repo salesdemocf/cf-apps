@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: result-dev-dvb-eva
+  labels:
+    codefresh.io/environment: development
+  annotations:
+    codefresh.io/product: dvb-result
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/salesdemocf/cf-configs.git
+    targetRevision: dvb
+    path: environments/development/dvb/cf-result
+  destination:
+    namespace: eva-dvb-dev
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true

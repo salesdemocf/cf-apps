@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: result-stg-dvb-eva
+  labels:
+    codefresh.io/environment: staging
+  annotations:
+    codefresh.io/product: dvb-result
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/salesdemocf/cf-configs.git
+    targetRevision: dvb
+    path: environments/staging/dvb/cf-result
+  destination:
+    namespace: eva-dvb-stg
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
